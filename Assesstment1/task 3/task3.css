@@ -5,10 +5,13 @@ body {
   margin: 0;
 }
 
-/* MIXIN */
-/* a mixin to handle the centering of elements. */
-/* COLORS VARIABLE */
-/* Applying the color variable */
+/************** MIXIN ************/
+/*Mixin is a way to group and reuse sets of CSS declarations*/
+/* Defining circle || Mixin for creating a circle with Customizable width and height and specified radius  */
+/* Defining center || Mixin to handle the centering of elements. */
+/************ MIXIN WILL BE USED LATER ON WITH CIRCLE STYLING AND MEDIA QUERY ************/
+/************** COLORS VARIABLE *************/
+/* Applying the color variable for row and circle items */
 .row1, .cir1 {
   background-color: #4e89ae;
 }
@@ -25,20 +28,27 @@ body {
   background-color: #ffa372;
 }
 
+/* Applying the color variable for header and footer */
 header, footer {
   background-color: #8ccff7;
 }
 
+/* VARIABLE FOR FOOTER HEIGHT */
+/*Applying  the footer variable */
 footer {
   height: 50px;
+  bottom: 0;
+  width: 100%;
 }
 
+/*Applying the variable color for hover */
 .row1:hover, .row2:hover, .row3:hover, .row4:hover, .cir1:hover, .cir2:hover, .cir3:hover, .cir4:hover {
   background-color: #444;
   color: #444;
 }
 
-/* POSITIONING/SIZING */
+/********** POSITIONING/SIZING ******************/
+/*ROWS*/
 /* Rows and rows item spacing and size */
 .rows {
   margin-top: 40px;
@@ -50,11 +60,15 @@ footer {
 
 /* CIRCLE */
 /* Variable for circles sizing */
-/* Circles and circles item spacing and size */
+/*MIXIN IS USED HERE*/
+/*when applying the mixin, we use "@include" */
+/*Circle sizing including mixin*/
+/*applying the mixin and customizing the size of the circle with the variable*/
 .cir1 {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+  /* this variable will now be  width and height value */
 }
 
 .cir2 {
@@ -75,8 +89,11 @@ footer {
   border-radius: 50%;
 }
 
+/*circles item spacing || flexbox */
 .circles {
+  /*this flexbox method helps circles to move in with the space the screen provides */
   display: flex;
+  /*kept in the center */
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -84,22 +101,27 @@ footer {
   margin-bottom: 40px;
 }
 
-/* Media queries for Desktop */
+/***************** MEDIA QUERIES ****************/
+/*In this part we add the images and center it with the mixin*/
+/* Media query triggered when screen is 801 pixels or above */
 @media (min-width: 801px) {
-  .pic1 {
+  .pic1 { /*this div class is used to have a space for the image*/
     background-image: url("400.png");
     width: 400px;
     height: 400px;
+    /* customizing mixin-include */
   }
   .img {
     display: flex;
     justify-content: center;
     align-items: center;
+    /*using this mixin-include to flex center*/
   }
 }
-/* Media queries for tablet */
-@media (max-width: 800px) and (min-width: 768px) {
-  .pic1 {
+/*Using the same approach with the following */
+/* Media query triggered when screen is between 800px and 481px */
+@media (max-width: 800px) and (min-width: 481px) {
+  .pic2 {
     background-image: url("300.png");
     width: 300px;
     height: 300px;
@@ -113,8 +135,8 @@ footer {
     flex-direction: column;
   }
 }
-/* Media queries for phone */
-@media (max-width: 767px) {
+/* Media query triggered when screen is 480px or below */
+@media (max-width: 480px) {
   .pic3 {
     background-image: url("200.png");
     width: 200px;
