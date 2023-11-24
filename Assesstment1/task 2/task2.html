@@ -1,0 +1,94 @@
+<!--WELCOME TO MY TASK2!
+    IN THIS TASK ILL BE CLONING THE GIVEN SAMPLE.
+    THIS TASK FOCUSES ON THE USE OF FLEXBOX.-->
+
+    <!--Flexbox method simplifies the creation of flexible 
+        and responsive layout structures, 
+        eliminating the need for float or positioning techniques.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brendel_task2</title>
+    <link rel="stylesheet" href="task2.css"><!--linking my css-->
+</head>
+
+
+<body>
+    <!--In the header there is 3 different item.-->
+    <!--LOGO,SEARCH BAR, AND NAV ITEMS-->
+    <header> <!--Semantic elements to be organized-->
+        <!--Different div for Logo and Search for styling purposes-->
+        <div class="logo">What's On</div>
+        <div class="search">
+            <input type="text" placeholder="Search...">
+        </div>
+        <!--Here I created a list for the navigation items-->
+        <nav>
+            <ul>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Tv</a></li>
+                <li><a href="#">Login</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main><!-- Main content -->
+        <div class="container"><!-- Flexbox container for movie items -->
+            <div class="aven"><!-- First flexbox item -->
+                <!-- Inside the box -->
+                <img src="avengers.jpg">
+                <h1>Avengers - Endgame</h1>
+                <p>After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.</p>
+                <button>More Info...</button>
+            </div>
+    
+            <!-- Another container inside the 1st container -->
+            <!-- This is to have all the items in container2 stack together on the right side of the first item. -->
+            <!-- The first item is not included in this container, allowing for different sizing and spacing with flexbox. -->
+            <!-- The other boxes would take up space underneath "aven" without this technique. -->
+            <div class="container2">
+                <!-- Lone Gunmen box -->
+                <div class="lone">
+                    <img src="lone-gunmen.jpg">
+                    <h1>The Lone Gunmen</h1>
+                    <p>The X-Files Lone Gunmen investigate crimes and conspiracies, often in a silly, comedic, and over-the-top fashion.</p>
+                    <button>More Info...</button>
+                </div>
+    
+                <!-- Predators box -->
+                <div class="pre">
+                    <img src="predators.jpg">
+                    <h1>Predators</h1>
+                    <p>A group of elite warriors parachutes into an unfamiliar jungle and is hunted by members of a merciless alien race.</p>
+                    <button>More Info...</button>
+                </div>
+    
+                <!-- Millennium Trilogy box -->
+                <div class="mill">
+                    <img src="millenium.jpg">
+                    <h1>Millennium Trilogy</h1>
+                    <p>The adventures of journalist Mikael Blomkvist and hacker Lisbeth Salander.</p>
+                    <button>More Info...</button>
+                </div>
+    
+                <!-- Rage box -->
+                <div class="rage">
+                    <img src="rage.jpg">
+                    <h1>Rage</h1>
+                    <p>When the daughter of a reformed criminal is kidnapped, he rounds up his old crew and seeks his own brand of justice.</p>
+                    <button>More Info...</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer><!-- Copyright notice -->
+        Copyright © 2021 What's On
+    </footer>
+    </body>
+    </html>
+    

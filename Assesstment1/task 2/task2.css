@@ -1,0 +1,159 @@
+/*************DEFAULT STYLE******************/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: rgb(244, 244, 244);
+}
+
+/**************** NAVIGATION STYLING *************/
+/*HEADER STYLING/ SIZE/ FLEX*/
+header {
+    background-color: rgb(63, 181, 236);
+    color: #fff;
+    padding: 15px;
+    display: flex;/*Flex to fit in every item in the same line */
+    align-items: center;/* Center all items */
+}
+
+/*LOGO POSITION / SIZE / WEIGHT */
+.logo {
+    width: 100%;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* SEARCH BAR FLEX SPACE || POSITION*/
+.search {
+    margin-right: 250px;
+    width: 100%;
+    text-align: center;
+}
+
+/*SEARCH BAR SIZE*/
+input {
+    width: 200px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/*LIST ON THE RIGHT SIDE STYLE */
+/*FLEXING ITEM AND REMOVING EXTRA STYLE */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    cursor: pointer;
+    margin-right: 15px;/*space of li with each other */
+    font-size: 15px;
+}
+
+li a {
+    text-decoration: none; /*removing extra style*/
+    color: white;
+}
+
+/**************** CONTENT INSIDE THE FLEXBOX ITEM ********************/
+/*Text size and position/format */
+h1 {
+    font-size: 20px;
+    text-align: left;
+    margin: 10px;
+}
+
+p {
+    font-size: 15px;
+    text-align: left;
+    margin: 10px;
+}
+
+/*For images to adjust themselves*/
+img {
+    max-width: 100%; 
+    height: auto;
+}
+
+button {
+    background-color: #0095ff;
+    color: #fff;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute; /*to keep in parent's body */
+    /*further positioning*/
+    bottom: 10px;
+    right: 10px;
+}
+
+/**************** FLEXBOX METHOD || MAIN CONTENT  *****************/
+/* The main container || centered with space around */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /*helps the container to stay on the center*/
+    margin: 10px 150px 0 150px; /*this margin is to help me with sizing the container/ Centering*/
+}
+
+/*secondary container to put the other items on the right side of .aven */
+/*without this some items would be underneath .aven */
+.container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 40%;
+}
+
+/*BOX STYLING OF AVEN */
+.aven {
+    flex: 0.8; /*SPACE IT WOULD CONSUME */
+    height: 100%;
+    padding-bottom: 100px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 7px;
+    position: relative;/*original position */
+}
+
+/*BOX STYLING OF OTHER ITEMS */
+.lone,
+.pre,
+.mill,
+.rage  {
+    flex: 35%; /* taking up 35% of the space in the container || allowing the item to squeeze in with that remaining space */
+    margin: 10px;
+    height: 540px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 7px;
+    position: relative;
+}
+
+/********** FOOTER STYLING ****************/
+footer {
+    color: #64646486;
+    text-align: center;
+    margin-top: 20px;
+    line-height: 50px;
+    padding: 10px;
+    bottom: 0;
+}
+
+
+
+
+
+
+

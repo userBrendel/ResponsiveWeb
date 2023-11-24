@@ -1,0 +1,131 @@
+/* DEFAULT BODY COLOR AND SPACE */
+body {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+}
+
+/* MIXIN */
+/* a mixin to handle the centering of elements. */
+/* COLORS VARIABLE */
+/* Applying the color variable */
+.row1, .cir1 {
+  background-color: #4e89ae;
+}
+
+.row2, .cir2 {
+  background-color: #43658b;
+}
+
+.row3, .cir3 {
+  background-color: #ed6663;
+}
+
+.row4, .cir4 {
+  background-color: #ffa372;
+}
+
+header, footer {
+  background-color: #8ccff7;
+}
+
+footer {
+  height: 50px;
+}
+
+.row1:hover, .row2:hover, .row3:hover, .row4:hover, .cir1:hover, .cir2:hover, .cir3:hover, .cir4:hover {
+  background-color: #444;
+  color: #444;
+}
+
+/* POSITIONING/SIZING */
+/* Rows and rows item spacing and size */
+.rows {
+  margin-top: 40px;
+}
+
+.row1, .row2, .row3, .row4 {
+  height: 51.5px;
+}
+
+/* CIRCLE */
+/* Variable for circles sizing */
+/* Circles and circles item spacing and size */
+.cir1 {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.cir2 {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+.cir3 {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+}
+
+.cir4 {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.circles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* Media queries for Desktop */
+@media (min-width: 801px) {
+  .pic1 {
+    background-image: url("400.png");
+    width: 400px;
+    height: 400px;
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/* Media queries for tablet */
+@media (max-width: 800px) and (min-width: 768px) {
+  .pic1 {
+    background-image: url("300.png");
+    width: 300px;
+    height: 300px;
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circles {
+    flex-direction: column;
+  }
+}
+/* Media queries for phone */
+@media (max-width: 767px) {
+  .pic3 {
+    background-image: url("200.png");
+    width: 200px;
+    height: 200px;
+  }
+  .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .circles {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=task3.css.map */

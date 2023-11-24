@@ -1,0 +1,185 @@
+/* DEFAULT BODY COLOR AND SPACE */
+body {
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+
+/************** MIXIN ************/
+/*Mixin is a way to group and reuse sets of CSS declarations*/
+
+/* Defining circle || Mixin for creating a circle with Customizable width and height and specified radius  */
+@mixin circle($radius) {
+    width: $radius;
+    height: $radius;
+    border-radius: 50%;
+}
+// Defining img || mixin for the background img with customizable source, width and height //
+@mixin img($src, $width, $height) {
+    background-image: url($src);
+    width: $width;
+    height: $height;
+}
+
+/* Defining center || Mixin to handle the centering of elements. */
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/************ MIXIN WILL BE USED LATER ON WITH CIRCLE STYLING AND MEDIA QUERY ************/
+
+/************** COLORS VARIABLE *************/
+$color-1: #4e89ae;
+$color-2: #43658b;
+$color-3: #ed6663;
+$color-4: #ffa372;
+$color-header-footer: #8ccff7;
+$color-hover: #444;
+
+/* Applying the color variable for row and circle items */
+.row1, .cir1 {
+    background-color: $color-1;
+}
+
+.row2, .cir2 {
+    background-color: $color-2;
+}
+
+.row3, .cir3 {
+    background-color: $color-3;
+}
+
+.row4, .cir4 {
+    background-color: $color-4;
+}
+
+/* Applying the color variable for header and footer */
+header, footer {
+    background-color: $color-header-footer;
+}
+
+/* VARIABLE FOR FOOTER HEIGHT */
+$footer-height: 50px;
+
+/*Applying  the footer variable */
+footer {
+    height: $footer-height;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+/*Applying the variable color for hover */
+.row1:hover, .row2:hover, .row3:hover, .row4:hover, .cir1:hover, .cir2:hover, .cir3:hover, .cir4:hover {
+    background-color: $color-hover;
+    color: $color-hover;
+}
+
+/********** POSITIONING/SIZING ******************/
+/*ROWS*/
+/* Rows and rows item spacing and size */
+.rows {
+    margin-top: 40px;
+}
+
+.row1, .row2, .row3, .row4 {
+    height: 51.5px;
+}
+
+/* CIRCLE */
+/* Variable for circles sizing */
+$cir-1-rad: 70px;
+$cir-2-rad: 80px;
+$cir-3-rad: 90px;
+$cir-4-rad: 100px;
+
+/*MIXIN IS USED HERE*/
+/*when applying the mixin, we use "@include" */
+
+/*Circle sizing including mixin*/
+/*applying the mixin and customizing the size of the circle with the variable*/
+.cir1 {
+    @include circle($cir-1-rad); /* this variable will now be  width and height value */
+}
+
+.cir2 {
+    @include circle($cir-2-rad);
+}
+
+.cir3 {
+    @include circle($cir-3-rad);
+}
+
+.cir4 {
+    @include circle($cir-4-rad);
+}
+
+/*circles item spacing || flexbox */
+.circles {
+    /*this flexbox method helps circles to move in with the space the screen provides */
+    display: flex;
+    /*kept in the center */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/***************** MEDIA QUERIES ****************/
+/*In this part we add the images and center it with the mixin*/
+
+/* Media query triggered when screen is 801 pixels or above */
+@media (min-width: 801px) {
+    .pic1 {/*this div class is used to have a space for the image*/
+        @include img("400.png", 400px, 400px);/* customizing mixin-include */
+    }
+    .img {
+        @include center;/*using this mixin-include to flex center*/
+    }
+}
+
+/*Using the same approach with the following */
+/* Media query triggered when screen is between 800px and 481px */
+@media (max-width: 800px) and (min-width: 481px) {
+    .pic2 {
+        @include img("300.png", 300px, 300px);
+    }
+    .img {
+        @include center;
+    }
+    .circles {
+        flex-direction: column;
+    }
+}
+
+/* Media query triggered when screen is 480px or below */
+@media (max-width: 480px) {
+    .pic3 {
+        @include img("200.png", 200px, 200px);
+    }
+    .img {
+        @include center;
+    }
+    .circles {
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+  
+
+
+  
+
+   
+
+
+
+
+  

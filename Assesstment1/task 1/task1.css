@@ -1,0 +1,130 @@
+/*default style */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Header will only include the logo */
+header {
+    padding: 15px;
+}
+
+
+.logo {
+    margin-left: 65px;/*positioning */
+}
+
+.logo img{
+    width: 70px; /* size of the logo */
+}
+
+/* The margin of main*/
+main {   
+    margin: 10px 60px 80px 60px;/* top margin - right margin - bottom margin - left margin */
+}
+
+/*Flexbox container */
+.flex {
+    display: flex; /* to create a flex container */
+    flex-wrap: wrap; /* to always fit in the container*/
+    justify-content: center; /*to always keep it on the center */
+}
+
+/*Items in the container*/
+/* Style for individual pictures within the flex container */
+.picture {
+    flex-basis:33.33%;/*  this is for the picture to occupy approximately one-third of the container.*/
+
+
+}
+/*the images themselves should take up 100% of the width of the flex basis*/
+.picture img {
+    width: 100%;
+}
+
+/* styling and spacing for text under the pictures */
+
+.text {
+    font-family: monospace;
+    font-size: 15px;
+    margin: 20px 30px 20px 30px;
+    line-height: 25px;
+}
+
+footer {
+    background-color: #000000;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+/* MEDIA QUERY TO CREATE A RESPONSIVE WEBSITE || TO BE MORE ACCESSIBLE TO OTHER DEVICES*/
+/*if the width is more than 1023 or the width is not specific by media query it will go just show the default styling */
+
+/* This will be the format for screens up to 1023 */
+/* Triggered when the screen width is 1023 pixels or less */
+/* For larger tablets or screens */
+@media (max-width: 1023px) {
+    .flex {
+        flex-wrap: wrap; /* This allows the items to stack vertically when the screen is minimized */
+    }
+
+    .picture {
+        flex-basis: 50%; /* Each picture will take up 50% of the container/screen */
+    }
+}
+
+/* This will be the format for screens up to 799 */
+/* Triggered when the screen width is 799 pixels or less */
+/* For smaller tablets or larger mobile devices */
+
+@media (max-width: 799px) {
+    .logo img {
+        width: 50px; /* Adjusting logo size for smaller screens */
+    }
+
+    .flex {
+        flex-wrap: wrap;
+    }
+
+    .picture {
+        flex-basis: 50%;
+    }
+}
+
+/* This will be the format for screens up to 480 */
+/* For phones and smaller screens */
+
+@media (max-width: 480px) {
+    /* Maintaining proper margin on smaller screens */
+    .logo {
+        margin-left: 40px;
+    }
+
+    /* Smaller logo */
+    .logo img {
+        width: 40px;
+    }
+
+    .flex {
+        flex-direction: column; /* Pictures will be in a column format/vertically */
+    }
+
+    .picture {
+        flex-basis: 100%; /* Taking up all space of the container */ /* In this case, pictures will be stacked vertically */
+    }
+
+    /* Maintaining font size and spacing on smaller screens */
+    .text {
+        font-size: smaller;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+
+
+
+
+
